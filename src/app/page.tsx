@@ -9,10 +9,7 @@ import {
   Eye, 
   Layers, 
   Terminal, 
-  Globe, 
-  Award, 
-  ExternalLink,
-  ChevronRight
+  Globe
 } from 'lucide-react';
 
 function GitHubIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -157,6 +154,15 @@ export default function Portfolio() {
               <span>GitHub</span>
             </a>
             <a 
+              href="https://linkedin.com/in/sharmarke-mohamed" 
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center space-x-2 bg-white border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all shadow-sm"
+            >
+              <Linkedin className="w-4 h-4 text-blue-600" />
+              <span>LinkedIn</span>
+            </a>
+            <a 
               href="mailto:sharmachannel@gmail.com" 
               className="inline-flex items-center space-x-2 bg-white border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all shadow-sm"
             >
@@ -203,7 +209,7 @@ export default function Portfolio() {
               ].map((tab) => (
                 <button
                   key={tab.id}
-                  onClick={() => setFilter(tab.id as any)}
+                  onClick={() => setFilter(tab.id as 'all' | 'vision' | 'systems' | 'web')}
                   className={`text-xs px-3 py-1.5 rounded-lg font-medium transition-all ${
                     filter === tab.id
                       ? 'bg-indigo-600 text-white shadow-sm'

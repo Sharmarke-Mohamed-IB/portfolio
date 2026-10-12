@@ -17,7 +17,11 @@ export const metadata: Metadata = {
   description: "Senior Computer Engineering Student focusing on Computer Vision, High-Performance C++ Systems, and AI Platforms.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html
       lang="en"
