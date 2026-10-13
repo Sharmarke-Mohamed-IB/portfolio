@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PipelineVisualizer from '@/components/PipelineVisualizer';
 import { 
   Mail, 
   FileText, 
   Cpu, 
   Eye, 
   Layers, 
-  Terminal, 
   Globe 
 } from 'lucide-react';
 
@@ -48,7 +48,7 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Plate Vision & Real-Time ANPR",
+      title: "Plate Vision (ANPR)",
       category: "vision",
       badge: "Edge Vision Pipeline",
       metric: "<100ms Inference Latency",
@@ -58,12 +58,22 @@ export default function Portfolio() {
       icon: <Eye className="w-5 h-5 text-indigo-600" />
     },
     {
-      title: "Parallel Log Analyzer & C++ Engine",
+      title: "Parallel Log Analyzer (C++ AVX2)",
       category: "systems",
       badge: "SIMD Concurrency",
       metric: "AVX2 Vectorized",
       description: "High-throughput parallel data parsing engine leveraging AVX2 SIMD hardware instructions, lock-free concurrent queues, and POSIX multithreading (pthreads) to analyze large datasets with minimal lock contention.",
       tags: ["C++", "AVX2 SIMD", "POSIX Threads", "Concurrency", "Linux"],
+      github: "https://github.com/Sharmarke-Mohamed-IB",
+      icon: <Cpu className="w-5 h-5 text-indigo-600" />
+    },
+    {
+      title: "Noisy Channel Simulator",
+      category: "systems",
+      badge: "Concurrent Systems",
+      metric: "C / pthreads",
+      description: "A noisy communication channel simulator built in C with POSIX threads to explore concurrent message processing and error behavior.",
+      tags: ["C", "pthreads", "Concurrency", "Simulation"],
       github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Cpu className="w-5 h-5 text-indigo-600" />
     },
@@ -78,7 +88,7 @@ export default function Portfolio() {
       icon: <Layers className="w-5 h-5 text-indigo-600" />
     },
     {
-      title: "Driver Drowsiness Monitoring",
+      title: "Driver Drowsiness (EAR vs YOLOv8)",
       category: "vision",
       badge: "Facial Landmark Tracking",
       metric: "MediaPipe EAR vs YOLOv8",
@@ -86,16 +96,6 @@ export default function Portfolio() {
       tags: ["Python", "MediaPipe", "OpenCV", "Computer Vision"],
       github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Eye className="w-5 h-5 text-indigo-600" />
-    },
-    {
-      title: "Multi-Model ML Data Mining",
-      category: "systems",
-      badge: "Empirical Benchmarking",
-      metric: "SMOTE Balanced",
-      description: "Machine learning workflow featuring automated preprocessing, feature scaling, SMOTE oversampling, and comparative benchmarking across Random Forests, SVMs, and Decision Trees.",
-      tags: ["Python", "scikit-learn", "SMOTE", "pandas", "NumPy"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
-      icon: <Terminal className="w-5 h-5 text-indigo-600" />
     },
     {
       title: "Mubarak B2B & BitPost AI",
@@ -106,6 +106,16 @@ export default function Portfolio() {
       tags: ["Java Spring Boot", "Laravel", "Docker", "MySQL", "ASP.NET Core"],
       github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Globe className="w-5 h-5 text-indigo-600" />
+    },
+    {
+      title: "Cinema Booking & MyLibrary",
+      category: "web",
+      badge: "Full-Stack Applications",
+      metric: "ASP.NET Core MVC",
+      description: "Web applications for cinema ticket booking and personal library management, built with ASP.NET Core MVC.",
+      tags: ["C#", "ASP.NET Core MVC", "SQL", "Web Applications"],
+      github: "https://github.com/Sharmarke-Mohamed-IB",
+      icon: <Layers className="w-5 h-5 text-indigo-600" />
     }
   ];
 
@@ -150,7 +160,7 @@ export default function Portfolio() {
               Sharmarke Mohamed Ibrahim
             </h1>
             <p className="text-xl text-slate-600 font-medium">
-              Computer Engineering Senior at <span className="text-slate-900 font-semibold">Istanbul Arel University</span>
+              B.S. in Computer Engineering at <span className="text-slate-900 font-semibold">Istanbul Arel University</span>
             </p>
           </div>
 
@@ -213,6 +223,26 @@ export default function Portfolio() {
               <p className="text-xs text-slate-500 font-medium mt-1">C1 English Proficiency</p>
             </div>
           </div>
+        </section>
+
+        <section id="experience" className="space-y-6">
+          <div className="border-b border-slate-200 pb-4">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Professional Experience</h2>
+          </div>
+          <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <h3 className="font-bold text-slate-900">Software Developer Intern · Scramble Bit</h3>
+              <span className="text-sm font-medium text-indigo-600">February–June 2026</span>
+            </div>
+          </article>
+        </section>
+
+        <section id="lab" className="space-y-5">
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Interactive Engineering Lab</h2>
+            <p className="mt-1 text-sm text-slate-500">Pipeline latency, parallel parsing configurations, and supervised model benchmarks.</p>
+          </div>
+          <PipelineVisualizer />
         </section>
 
         {/* Projects Section with Live Interactive Filter Tabs */}
@@ -348,7 +378,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-base font-bold text-slate-900">Defense Logistics Liaison (Mihmandar)</h3>
+                <h3 className="text-base font-bold text-slate-900">Defense Liaison</h3>
                 <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
                   SAHA EXPO 2026
                 </span>
@@ -360,7 +390,7 @@ export default function Portfolio() {
 
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-base font-bold text-slate-900">VIP Protocol & Summit Secretariat</h3>
+                <h3 className="text-base font-bold text-slate-900">VIP Secretariat</h3>
                 <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
                   Global Zero Waste Forum
                 </span>
@@ -372,7 +402,7 @@ export default function Portfolio() {
 
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-base font-bold text-slate-900">President of Executive Council</h3>
+                <h3 className="text-base font-bold text-slate-900">Chair of Central Council (Gudoomiyaha Golaha Dhexe)</h3>
                 <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
                   UASI Student Union
                 </span>
