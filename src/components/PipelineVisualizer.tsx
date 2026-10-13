@@ -124,7 +124,7 @@ export default function PipelineVisualizer() {
                 </div>
               ))}
             </div>
-            <p className="mt-3 text-xs text-slate-500">Random Forest and SVM are included in the comparison; no AUC figure is shown here.</p>
+            <p className="mt-3 text-xs leading-relaxed text-slate-500">These are reported results from one experiment, not independently validated medical performance. Random Forest and SVM are included in the comparison; no AUC figure is shown here.</p>
           </div>
         )}
       </div>

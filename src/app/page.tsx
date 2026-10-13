@@ -8,7 +8,11 @@ import {
   Cpu, 
   Eye, 
   Layers, 
-  Globe 
+  Globe,
+  Database,
+  Code2,
+  Wrench,
+  ArrowUpRight
 } from 'lucide-react';
 
 function GitHubIcon({ className = "w-5 h-5" }: { className?: string }) {
@@ -29,20 +33,6 @@ function GitHubIcon({ className = "w-5 h-5" }: { className?: string }) {
   );
 }
 
-function LinkedInIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg 
-      className={className} 
-      style={{ width: "20px", height: "20px", flexShrink: 0 }} 
-      fill="currentColor" 
-      viewBox="0 0 24 24" 
-      aria-hidden="true"
-    >
-      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-    </svg>
-  );
-}
-
 export default function Portfolio() {
   const [filter, setFilter] = useState<'all' | 'vision' | 'systems' | 'web'>('all');
 
@@ -54,7 +44,6 @@ export default function Portfolio() {
       metric: "<100ms Inference Latency",
       description: "End-to-end computer vision pipeline utilizing custom YOLOv8 models for vehicle and license plate localization. Integrated SORT multi-object tracking and EasyOCR to extract alphanumeric plate sequences at sub-100ms frame latency.",
       tags: ["Python", "YOLOv8", "OpenCV", "EasyOCR", "PyTorch"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Eye className="w-5 h-5 text-indigo-600" />
     },
     {
@@ -64,7 +53,6 @@ export default function Portfolio() {
       metric: "AVX2 Vectorized",
       description: "High-throughput parallel data parsing engine leveraging AVX2 SIMD hardware instructions, lock-free concurrent queues, and POSIX multithreading (pthreads) to analyze large datasets with minimal lock contention.",
       tags: ["C++", "AVX2 SIMD", "POSIX Threads", "Concurrency", "Linux"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Cpu className="w-5 h-5 text-indigo-600" />
     },
     {
@@ -74,7 +62,6 @@ export default function Portfolio() {
       metric: "C / pthreads",
       description: "A noisy communication channel simulator built in C with POSIX threads to explore concurrent message processing and error behavior.",
       tags: ["C", "pthreads", "Concurrency", "Simulation"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Cpu className="w-5 h-5 text-indigo-600" />
     },
     {
@@ -84,7 +71,6 @@ export default function Portfolio() {
       metric: "384-Dim Vectors",
       description: "Full-stack talent intelligence system converting unstructured text into dense semantic vectors via Sentence-Transformers (all-MiniLM-L6-v2), with weighted cosine similarity and interactive radar chart diagnostics.",
       tags: ["FastAPI", "React", "Sentence-Transformers", "PostgreSQL", "Tailwind"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Layers className="w-5 h-5 text-indigo-600" />
     },
     {
@@ -94,7 +80,6 @@ export default function Portfolio() {
       metric: "MediaPipe EAR vs YOLOv8",
       description: "Real-time safety system calculating Eye Aspect Ratio (EAR) and head-pose heuristics, benchmarking geometric landmark analysis against deep learning classification pipelines.",
       tags: ["Python", "MediaPipe", "OpenCV", "Computer Vision"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Eye className="w-5 h-5 text-indigo-600" />
     },
     {
@@ -104,18 +89,34 @@ export default function Portfolio() {
       metric: "Docker Multi-Tier",
       description: "Enterprise application architectures: built a B2B marketplace backend with Java Spring Boot and JWT auth, alongside BitPost AI SaaS and containerized ASP.NET Core microservices deployed via Docker.",
       tags: ["Java Spring Boot", "Laravel", "Docker", "MySQL", "ASP.NET Core"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Globe className="w-5 h-5 text-indigo-600" />
     },
     {
-      title: "Cinema Booking & MyLibrary",
+      title: "Cinema Booking & Management",
       category: "web",
       badge: "Full-Stack Applications",
       metric: "ASP.NET Core MVC",
-      description: "Web applications for cinema ticket booking and personal library management, built with ASP.NET Core MVC.",
+      description: "A database-backed cinema application for managing movies and ticket bookings, built with ASP.NET Core MVC, C#, SQLite, and Bootstrap.",
       tags: ["C#", "ASP.NET Core MVC", "SQL", "Web Applications"],
-      github: "https://github.com/Sharmarke-Mohamed-IB",
       icon: <Layers className="w-5 h-5 text-indigo-600" />
+    },
+    {
+      title: "MyLibrary MVC",
+      category: "web",
+      badge: "Database-Backed Web App",
+      metric: "ASP.NET Core · SQLite",
+      description: "An MVC library application centered on book management and database-backed workflows, developed with ASP.NET Core, SQLite, and Bootstrap.",
+      tags: ["C#", "ASP.NET Core MVC", "SQLite", "Bootstrap"],
+      icon: <Database className="w-5 h-5 text-indigo-600" />
+    },
+    {
+      title: "Diabetes Classification",
+      category: "systems",
+      badge: "Supervised Learning",
+      metric: "ROC-AUC comparison",
+      description: "A scikit-learn study comparing classification models on the diabetes dataset, including preprocessing, SMOTE, and evaluation with ROC-AUC and accuracy.",
+      tags: ["Python", "pandas", "scikit-learn", "SMOTE", "Model Evaluation"],
+      icon: <Cpu className="w-5 h-5 text-indigo-600" />
     }
   ];
 
@@ -132,17 +133,31 @@ export default function Portfolio() {
           <span className="font-bold text-lg text-slate-900 tracking-tight">
             Sharmarke Mohamed
           </span>
-          <div className="flex items-center space-x-6 text-sm font-medium text-slate-600">
+          <div className="hidden items-center space-x-5 text-sm font-medium text-slate-600 md:flex">
+            <a href="#about" className="hover:text-indigo-600 transition-colors">About</a>
             <a href="#projects" className="hover:text-indigo-600 transition-colors">Projects</a>
+            <a href="#lab" className="hover:text-indigo-600 transition-colors">Lab</a>
+            <a href="#experience" className="hover:text-indigo-600 transition-colors">Experience</a>
             <a href="#skills" className="hover:text-indigo-600 transition-colors">Skills</a>
             <a href="#leadership" className="hover:text-indigo-600 transition-colors">Leadership</a>
+            <a href="#services" className="hover:text-indigo-600 transition-colors">Services</a>
             <a 
-              href="mailto:sharmachannel@gmail.com" 
+              href="#contact" 
               className="bg-indigo-600 text-white px-3.5 py-1.5 rounded-lg hover:bg-indigo-700 transition-all font-semibold shadow-sm"
             >
               Contact
             </a>
           </div>
+        </div>
+        <div className="flex gap-5 overflow-x-auto border-t border-slate-100 px-6 py-2 text-xs font-medium text-slate-600 md:hidden" aria-label="Mobile navigation">
+          <a href="#about" className="shrink-0">About</a>
+          <a href="#projects" className="shrink-0">Projects</a>
+          <a href="#lab" className="shrink-0">Lab</a>
+          <a href="#experience" className="shrink-0">Experience</a>
+          <a href="#skills" className="shrink-0">Skills</a>
+          <a href="#leadership" className="shrink-0">Leadership</a>
+          <a href="#services" className="shrink-0">Services</a>
+          <a href="#contact" className="shrink-0">Contact</a>
         </div>
       </nav>
 
@@ -152,7 +167,7 @@ export default function Portfolio() {
         <section className="space-y-6 pt-4">
           <div className="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full text-xs font-semibold text-indigo-700">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Available for Erasmus+ Research Traineeships</span>
+            <span>Computer Engineering · Istanbul Arel University · 2022–2026</span>
           </div>
           
           <div className="space-y-2">
@@ -160,15 +175,18 @@ export default function Portfolio() {
               Sharmarke Mohamed Ibrahim
             </h1>
             <p className="text-xl text-slate-600 font-medium">
-              B.S. in Computer Engineering at <span className="text-slate-900 font-semibold">Istanbul Arel University</span>
+              Computer Engineer building practical software, AI, and data-driven solutions.
             </p>
           </div>
 
           <p className="max-w-2xl text-slate-600 leading-relaxed text-base">
-            Specializing in applied Computer Vision, AVX2 SIMD hardware acceleration in C++, and modern AI system architectures. Winner of the Bursa AKOM Engineering Challenge with experience coordinating high-stakes international defense and diplomatic operations.
+            I hold a B.S. in Computer Engineering from Istanbul Arel University. My project work spans web applications, computer vision, machine learning, and systems programming—from database-backed products to parallel C++ processing.
           </p>
 
           <div className="flex flex-wrap gap-3 pt-2">
+            <a href="#projects" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700">
+              Explore Projects <ArrowUpRight className="h-4 w-4" />
+            </a>
             <a 
               href="/CV.pdf" 
               target="_blank"
@@ -185,15 +203,6 @@ export default function Portfolio() {
             >
               <GitHubIcon className="w-4 h-4" />
               <span>GitHub</span>
-            </a>
-            <a 
-              href="https://linkedin.com" 
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center space-x-2 bg-white border border-slate-300 px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all shadow-sm"
-            >
-              <LinkedInIcon className="w-4 h-4 text-[#0A66C2]" />
-              <span>LinkedIn</span>
             </a>
             <a 
               href="mailto:sharmachannel@gmail.com" 
@@ -219,21 +228,46 @@ export default function Portfolio() {
               <p className="text-xs text-slate-500 font-medium mt-1">Bursa AKOM Challenge</p>
             </div>
             <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-              <p className="text-2xl font-black text-indigo-600">Cambridge</p>
-              <p className="text-xs text-slate-500 font-medium mt-1">C1 English Proficiency</p>
+              <p className="text-2xl font-black text-indigo-600">English</p>
+              <p className="text-xs text-slate-500 font-medium mt-1">Cambridge certificate · 2023</p>
             </div>
+          </div>
+        </section>
+
+        <section id="about" className="grid gap-6 border-y border-slate-200 py-10 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">About</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900">Engineering with a practical focus</h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-slate-600">
+            <p>I studied Computer Engineering at Istanbul Arel University from 2022 to 2026. My work combines implementation with evaluation across software, data, and systems projects.</p>
+            <p>Alongside development, customer support and event coordination have strengthened how I explain technical ideas, work with different people, and keep complex tasks moving.</p>
           </div>
         </section>
 
         <section id="experience" className="space-y-6">
           <div className="border-b border-slate-200 pb-4">
-            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Professional Experience</h2>
+              <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Experience</h2>
           </div>
           <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
               <h3 className="font-bold text-slate-900">Software Developer Intern · Scramble Bit</h3>
               <span className="text-sm font-medium text-indigo-600">February–June 2026</span>
             </div>
+          </article>
+          <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <h3 className="font-bold text-slate-900">Sales Associate · MediaMarkt</h3>
+              <span className="text-sm font-medium text-indigo-600">Istanbul · January–June 2023</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">Helped customers compare electronics, understand product features, complete purchases, and resolve setup or troubleshooting questions.</p>
+          </article>
+          <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <h3 className="font-bold text-slate-900">Freelance Digital Assistance & Technical Support</h3>
+              <span className="text-sm font-medium text-indigo-600">Since 2022</span>
+            </div>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600">Provided hardware and software troubleshooting, digital assistance, and visual content support.</p>
           </article>
         </section>
 
@@ -325,7 +359,7 @@ export default function Portfolio() {
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
               <h3 className="font-bold text-slate-900 text-sm">Languages & Low-Level</h3>
               <div className="flex flex-wrap gap-2">
-                {["C", "C++", "Python", "Java", "C#", "SQL", "POSIX Threads", "AVX2 SIMD"].map((s, i) => (
+                {["C", "C++", "Python", "Java", "C#", "PHP", "JavaScript", "SQL", "POSIX Threads", "AVX2 SIMD"].map((s, i) => (
                   <span key={i} className="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded-md font-medium">
                     {s}
                   </span>
@@ -347,7 +381,7 @@ export default function Portfolio() {
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
               <h3 className="font-bold text-slate-900 text-sm">Cloud, Systems & DevOps</h3>
               <div className="flex flex-wrap gap-2">
-                {["Docker", "Docker Compose", "Linux / Bash", "Git", "REST APIs", "PostgreSQL", "MySQL"].map((s, i) => (
+                {["Docker", "Docker Compose", "Linux / Bash", "Git", "REST APIs", "SQLite", "MySQL", "Arduino IDE"].map((s, i) => (
                   <span key={i} className="bg-slate-100 text-slate-800 text-xs px-2.5 py-1 rounded-md font-medium">
                     {s}
                   </span>
@@ -358,7 +392,7 @@ export default function Portfolio() {
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-3">
               <h3 className="font-bold text-slate-900 text-sm">Modern Web Architectures</h3>
               <div className="flex flex-wrap gap-2">
-                {["FastAPI", "React.js", "Java Spring Boot", "Tailwind CSS", "ASP.NET Core", "Laravel"].map((s, i) => (
+                {["FastAPI", "React.js", "Java Spring Boot", "ASP.NET Core MVC", "Laravel", "Bootstrap", "Tailwind CSS"].map((s, i) => (
                   <span key={i} className="bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs px-2.5 py-1 rounded-md font-medium">
                     {s}
                   </span>
@@ -378,7 +412,7 @@ export default function Portfolio() {
           <div className="space-y-4">
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-base font-bold text-slate-900">Defense Liaison</h3>
+                <h3 className="text-base font-bold text-slate-900">Defense Liaison · Serenas Group</h3>
                 <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
                   SAHA EXPO 2026
                 </span>
@@ -390,28 +424,84 @@ export default function Portfolio() {
 
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                <h3 className="text-base font-bold text-slate-900">VIP Secretariat</h3>
+                <h3 className="text-base font-bold text-slate-900">Global Summit Secretariat</h3>
                 <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
                   Global Zero Waste Forum
                 </span>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Administered technical logistics and ministerial VIP operations for a UN-partnered summit hosting over 120 international ministers across 183 countries.
+                Coordinated VIP operations and administration for a summit hosting over 120 ministers from 183 countries, alongside former heads of state and international delegates.
+              </p>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <h3 className="text-base font-bold text-slate-900">UASI Executive Council Presidency</h3>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
+                  UASI Student Union
+                </span>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Led student union operations, including governance, budgeting, and external relations. Also coordinated inter-university athletics involving eight Istanbul universities.
               </p>
             </div>
 
             <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="text-base font-bold text-slate-900">Chair of Central Council (Gudoomiyaha Golaha Dhexe)</h3>
-                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">
-                  UASI Student Union
-                </span>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">Somali student community</span>
               </div>
-              <p className="text-sm text-slate-600 leading-relaxed">
-                Directed student union governance, organized multi-university athletic tournaments mobilizing 8 Istanbul institutions, and coordinated student community welfare programs.
-              </p>
+              <p className="text-sm text-slate-600 leading-relaxed">Contributed to student programs, community coordination, and educational events in Türkiye.</p>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <h3 className="text-base font-bold text-slate-900">Graduation Ceremony Organizer</h3>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">2025–2026</span>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">Helped establish annual graduation ceremonies for the Somali student community, coordinating planning and event operations.</p>
+            </div>
+
+            <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-2">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <h3 className="text-base font-bold text-slate-900">Bab-iAlem International Student Association</h3>
+                <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full w-fit">2022–2024</span>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">Supported cultural exchange events and planning for international student experiences.</p>
             </div>
           </div>
+        </section>
+
+        <section id="services" className="space-y-6">
+          <div className="border-b border-slate-200 pb-4">
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Ways I Can Help</h2>
+            <p className="mt-1 text-sm text-slate-500">Practical development and technical support for focused projects.</p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'Web applications', text: 'MVC applications and database-backed workflows.', icon: Code2 },
+              { title: 'Computer vision', text: 'Prototypes for detection, tracking, and OCR tasks.', icon: Eye },
+              { title: 'Data workflows', text: 'Data preparation, automation, and model comparisons.', icon: Database },
+              { title: 'Technical support', text: 'Hands-on troubleshooting for common software and hardware issues.', icon: Wrench },
+            ].map(({ title, text, icon: Icon }) => (
+              <article key={title} className="rounded-xl border border-slate-200 bg-white p-5">
+                <Icon className="mb-3 h-5 w-5 text-indigo-600" aria-hidden="true" />
+                <h3 className="text-sm font-bold text-slate-900">{title}</h3>
+                <p className="mt-1 text-sm leading-relaxed text-slate-600">{text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="flex flex-col gap-5 rounded-2xl bg-slate-900 p-7 text-white sm:flex-row sm:items-center sm:justify-between sm:p-9">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-300">Contact</p>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight">Have a project or opportunity in mind?</h2>
+            <p className="mt-2 text-sm text-slate-300">I’m open to discussing software projects, engineering roles, and research opportunities.</p>
+          </div>
+          <a href="mailto:sharmachannel@gmail.com" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-bold text-slate-900 transition-colors hover:bg-indigo-50">
+            <Mail className="h-4 w-4" aria-hidden="true" /> Email me
+          </a>
         </section>
 
       </main>

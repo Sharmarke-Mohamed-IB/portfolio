@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sharmarke Mohamed Ibrahim | Computer Engineering & AI Portfolio",
-  description: "Senior Computer Engineering Student focusing on Computer Vision, High-Performance C++ Systems, and AI Platforms.",
+  title: "Sharmarke Mohamed Ibrahim | Computer Engineer",
+  description: "Computer Engineer building practical software, computer vision, machine learning, and systems projects.",
 };
 
 export default function RootLayout({
