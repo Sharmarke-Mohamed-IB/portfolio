@@ -236,12 +236,13 @@ export default function Portfolio() {
             <a href="#about" className="transition hover:text-indigo-700">About</a>
             <a href="#experience" className="transition hover:text-indigo-700">Experience</a>
             <a href="#leadership" className="transition hover:text-indigo-700">Leadership</a>
+            <a href="/CV.pdf" download className="transition hover:text-indigo-700">CV</a>
             <a href="#contact" className="bg-slate-950 px-4 py-2.5 text-white transition hover:bg-indigo-700">Get in touch</a>
           </div>
           <a href="#contact" className="bg-slate-950 px-3.5 py-2 text-xs font-semibold text-white md:hidden">Contact</a>
         </div>
         <div className="flex gap-5 overflow-x-auto border-t border-slate-200/70 px-5 py-2.5 text-[11px] font-semibold text-slate-600 md:hidden" aria-label="Mobile navigation">
-          <a href="#work" className="shrink-0">Work</a><a href="#lab" className="shrink-0">Lab</a><a href="#about" className="shrink-0">About</a><a href="#experience" className="shrink-0">Experience</a><a href="#leadership" className="shrink-0">Leadership</a><a href="#contact" className="shrink-0">Contact</a>
+          <a href="#work" className="shrink-0">Work</a><a href="#lab" className="shrink-0">Lab</a><a href="#about" className="shrink-0">About</a><a href="#experience" className="shrink-0">Experience</a><a href="#leadership" className="shrink-0">Leadership</a><a href="/CV.pdf" download className="shrink-0">CV</a><a href="#contact" className="shrink-0">Contact</a>
         </div>
       </nav>
 
@@ -384,7 +385,10 @@ export default function Portfolio() {
         <section id="contact" className="scroll-mt-28 bg-indigo-300">
           <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 sm:py-16 md:flex-row md:items-end md:justify-between">
             <div><p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-slate-800">Contact / 08</p><h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-5xl">Let’s talk about what you’re building.</h2><p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-800">For software opportunities, research, or a focused project, send me a note.</p></div>
-            <a href="mailto:sharmachannel@gmail.com" className="inline-flex shrink-0 items-center justify-between gap-8 border border-slate-950 bg-slate-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-slate-800">sharmachannel@gmail.com <ArrowUpRight className="h-4 w-4" /></a>
+            <div className="flex flex-wrap gap-3">
+              <a href="mailto:sharmachannel@gmail.com" className="inline-flex shrink-0 items-center justify-between gap-8 border border-slate-950 bg-slate-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-slate-800">Email me <ArrowUpRight className="h-4 w-4" /></a>
+              <a href="/CV.pdf" download className="inline-flex shrink-0 items-center justify-between gap-8 border border-slate-950 px-5 py-4 text-sm font-bold text-slate-950 transition hover:bg-white">Download CV <FileText className="h-4 w-4" /></a>
+            </div>
           </div>
         </section>
       </main>
