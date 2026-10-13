@@ -15,6 +15,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sharmarke Mohamed Ibrahim | Computer Engineer",
   description: "Computer Engineer building practical software, computer vision, machine learning, and systems projects.",
+  openGraph: {
+    title: "Sharmarke Mohamed Ibrahim | Computer Engineer",
+    description: "Selected software, computer vision, machine learning, and systems engineering work.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Sharmarke Mohamed Ibrahim | Computer Engineer",
+    description: "Selected software, computer vision, machine learning, and systems engineering work.",
+  },
 };
 
 export default function RootLayout({
