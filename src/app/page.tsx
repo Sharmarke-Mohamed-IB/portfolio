@@ -152,10 +152,10 @@ function ProjectArtwork({ kind }: { kind: Project['visual'] }) {
     return (
       <div className="art-vision relative flex h-40 items-center justify-center overflow-hidden border-b border-white/10 px-7">
         <div className="relative h-24 w-full max-w-[19rem] rounded-sm border border-slate-500/50 bg-slate-800/70">
-          <div className="absolute left-[18%] top-[16%] h-[55%] w-[24%] border border-cyan-300/90" />
-          <div className="absolute left-[48%] top-[30%] h-[46%] w-[34%] border border-indigo-300/90" />
-          <div className="absolute bottom-[12%] left-[52%] rounded-sm bg-indigo-300 px-1.5 py-0.5 font-mono text-[8px] text-slate-950">PLATE · OCR</div>
-          <span className="absolute -top-2 left-[18%] bg-cyan-300 px-1.5 py-0.5 font-mono text-[8px] text-slate-950">VEHICLE 01</span>
+          <div className="absolute left-[18%] top-[16%] h-[55%] w-[24%] border border-slate-200/90" />
+          <div className="absolute left-[48%] top-[30%] h-[46%] w-[34%] border border-slate-200/90" />
+          <div className="absolute bottom-[12%] left-[52%] rounded-sm bg-slate-200 px-1.5 py-0.5 font-mono text-[8px] text-slate-950">PLATE · OCR</div>
+          <span className="absolute -top-2 left-[18%] bg-slate-200 px-1.5 py-0.5 font-mono text-[8px] text-slate-950">VEHICLE 01</span>
         </div>
         <span className="absolute bottom-3 left-4 font-mono text-[9px] uppercase tracking-[0.18em] text-slate-400">Illustrative detection overlay</span>
       </div>
@@ -168,7 +168,7 @@ function ProjectArtwork({ kind }: { kind: Project['visual'] }) {
         {[1, 2, 3, 4].map((thread, index) => (
           <div key={thread} className="flex items-center gap-3">
             <span className="w-8 font-mono text-[9px] text-slate-400">T{thread}</span>
-            <div className="h-2 flex-1 rounded-sm bg-white/10"><div className="h-full rounded-sm bg-indigo-300" style={{ width: `${34 + index * 13}%` }} /></div>
+            <div className="h-2 flex-1 rounded-sm bg-white/10"><div className="h-full rounded-sm bg-slate-200" style={{ width: `${34 + index * 13}%` }} /></div>
             <span className="font-mono text-[9px] text-slate-400">worker</span>
           </div>
         ))}
@@ -181,7 +181,7 @@ function ProjectArtwork({ kind }: { kind: Project['visual'] }) {
     return (
       <div className="art-data relative flex h-40 items-end justify-center gap-3 border-b border-white/10 px-8 pb-8 pt-5">
         {[58, 76, 53, 88, 68, 96, 72, 83].map((height, index) => (
-          <div key={index} className="w-4 rounded-t-sm bg-indigo-300/80" style={{ height: `${height}%` }} />
+          <div key={index} className="w-4 rounded-t-sm bg-slate-200/80" style={{ height: `${height}%` }} />
         ))}
         <span className="absolute bottom-3 left-4 font-mono text-[9px] uppercase tracking-[0.18em] text-slate-400">Model evaluation · schematic</span>
       </div>
@@ -190,8 +190,8 @@ function ProjectArtwork({ kind }: { kind: Project['visual'] }) {
 
   return (
     <div className="art-web relative flex h-40 items-center justify-center gap-3 border-b border-white/10 px-7">
-      <div className="h-[4.8rem] w-16 rounded-sm border border-white/15 bg-white/5 p-1.5"><div className="h-7 rounded-[2px] bg-indigo-300/70" /><div className="mt-2 h-1 w-4/5 bg-white/25" /><div className="mt-1 h-1 w-3/5 bg-white/15" /></div>
-      <div className="h-[5.5rem] w-20 rounded-sm border border-indigo-300/40 bg-indigo-300/10 p-2"><div className="mb-2 h-1 w-1/2 bg-indigo-200/70" /><div className="h-1 w-full bg-white/20" /><div className="mt-1 h-1 w-4/5 bg-white/15" /><div className="mt-3 h-3 w-8 rounded-[2px] bg-indigo-300/60" /></div>
+      <div className="h-[4.8rem] w-16 rounded-sm border border-white/15 bg-white/5 p-1.5"><div className="h-7 rounded-[2px] bg-slate-200/70" /><div className="mt-2 h-1 w-4/5 bg-white/25" /><div className="mt-1 h-1 w-3/5 bg-white/15" /></div>
+      <div className="h-[5.5rem] w-20 rounded-sm border border-slate-200/40 bg-slate-200/10 p-2"><div className="mb-2 h-1 w-1/2 bg-slate-300/70" /><div className="h-1 w-full bg-white/20" /><div className="mt-1 h-1 w-4/5 bg-white/15" /><div className="mt-3 h-3 w-8 rounded-[2px] bg-slate-200/60" /></div>
       <div className="h-[4.8rem] w-16 rounded-sm border border-white/15 bg-white/5 p-1.5"><div className="h-7 rounded-[2px] bg-slate-500/60" /><div className="mt-2 h-1 w-4/5 bg-white/25" /><div className="mt-1 h-1 w-3/5 bg-white/15" /></div>
       <span className="absolute bottom-3 left-4 font-mono text-[9px] uppercase tracking-[0.18em] text-slate-400">Interface study · illustrative</span>
     </div>
@@ -204,7 +204,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
       <ProjectArtwork kind={project.visual} />
       <div className="p-5 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-indigo-700">{project.label}</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-700">{project.label}</span>
         </div>
         <h3 className="mt-2 text-xl font-bold tracking-tight text-slate-950">{project.title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-slate-600">{project.summary}</p>
@@ -222,8 +222,8 @@ export default function Portfolio() {
   const visibleProjects = filter === 'all' ? projects : projects.filter((project) => project.category === filter);
 
   return (
-    <div className="min-h-screen bg-[#f4f5f7] text-slate-900 selection:bg-indigo-200 selection:text-slate-950">
-      <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f4f5f7]/95 backdrop-blur-md">
+    <div className="min-h-screen bg-[#f5f5f5] text-slate-900 selection:bg-slate-300 selection:text-slate-950">
+      <nav className="sticky top-0 z-50 border-b border-slate-200/80 bg-[#f5f5f5]/95 backdrop-blur-md">
         <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between px-5 sm:px-8">
           <a href="#home" className="flex items-center gap-2.5 font-semibold tracking-tight text-slate-950" aria-label="Sharmarke Mohamed Ibrahim, home">
             <span className="grid h-8 w-8 place-items-center bg-slate-950 text-[11px] font-bold text-white">SM</span>
@@ -231,18 +231,18 @@ export default function Portfolio() {
             <span className="sm:hidden">Sharmarke Mohamed</span>
           </a>
           <div className="hidden items-center gap-6 text-xs font-semibold text-slate-600 md:flex">
-            <a href="#work" className="transition hover:text-indigo-700">Work</a>
-            <a href="#lab" className="transition hover:text-indigo-700">Lab</a>
-            <a href="#about" className="transition hover:text-indigo-700">About</a>
-            <a href="#experience" className="transition hover:text-indigo-700">Experience</a>
-            <a href="#leadership" className="transition hover:text-indigo-700">Leadership</a>
-            <a href="/CV.pdf" download className="transition hover:text-indigo-700">CV</a>
-            <a href="#contact" className="bg-slate-950 px-4 py-2.5 text-white transition hover:bg-indigo-700">Get in touch</a>
+            <a href="#work" className="transition hover:text-slate-700">Work</a>
+            <a href="#lab" className="transition hover:text-slate-700">Lab</a>
+            <a href="#about" className="transition hover:text-slate-700">About</a>
+            <a href="#experience" className="transition hover:text-slate-700">Experience</a>
+            <a href="#leadership" className="transition hover:text-slate-700">Leadership</a>
+            <a href="#cv" className="transition hover:text-slate-700">CV</a>
+            <a href="#contact" className="bg-slate-950 px-4 py-2.5 text-white transition hover:bg-slate-700">Get in touch</a>
           </div>
           <a href="#contact" className="bg-slate-950 px-3.5 py-2 text-xs font-semibold text-white md:hidden">Contact</a>
         </div>
         <div className="flex gap-5 overflow-x-auto border-t border-slate-200/70 px-5 py-2.5 text-[11px] font-semibold text-slate-600 md:hidden" aria-label="Mobile navigation">
-          <a href="#work" className="shrink-0">Work</a><a href="#lab" className="shrink-0">Lab</a><a href="#about" className="shrink-0">About</a><a href="#experience" className="shrink-0">Experience</a><a href="#leadership" className="shrink-0">Leadership</a><a href="/CV.pdf" download className="shrink-0">CV</a><a href="#contact" className="shrink-0">Contact</a>
+          <a href="#work" className="shrink-0">Work</a><a href="#lab" className="shrink-0">Lab</a><a href="#about" className="shrink-0">About</a><a href="#experience" className="shrink-0">Experience</a><a href="#leadership" className="shrink-0">Leadership</a><a href="#cv" className="shrink-0">CV</a><a href="#contact" className="shrink-0">Contact</a>
         </div>
       </nav>
 
@@ -251,16 +251,16 @@ export default function Portfolio() {
           <div className="absolute inset-0 opacity-[0.08]" aria-hidden="true" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px)', backgroundSize: '44px 44px' }} />
           <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.12fr_0.88fr] lg:items-center lg:gap-16 lg:py-24">
             <div>
-              <div className="mb-7 inline-flex items-center gap-2 border border-white/15 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-indigo-200">
-                <span className="h-1.5 w-1.5 bg-indigo-300" /> Computer Engineer · Istanbul, Türkiye
+              <div className="mb-7 inline-flex items-center gap-2 border border-white/15 bg-white/[0.04] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-300">
+                <span className="h-1.5 w-1.5 bg-slate-200" /> Computer Engineer · Istanbul, Türkiye
               </div>
               <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.055em] sm:text-6xl lg:text-[4.35rem]">
-                Sharmarke<br /><span className="text-indigo-300">Mohamed Ibrahim.</span>
+                Sharmarke<br /><span className="text-slate-200">Mohamed Ibrahim.</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300 sm:text-xl">Building practical software across web, computer vision, and systems engineering.</p>
               <p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-400">B.S. in Computer Engineering, Istanbul Arel University (2022–2026). Interested in turning technical ideas into useful, carefully evaluated software.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#work" className="inline-flex items-center gap-2 bg-indigo-300 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-white">Explore my work <ArrowDownRight className="h-4 w-4" /></a>
+                <a href="#work" className="inline-flex items-center gap-2 bg-slate-200 px-5 py-3 text-sm font-bold text-slate-950 transition hover:bg-white">Explore my work <ArrowDownRight className="h-4 w-4" /></a>
                 <a href="#contact" className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:border-white/60">Contact me <ArrowUpRight className="h-4 w-4" /></a>
               </div>
               <div className="mt-7 flex flex-wrap gap-x-5 gap-y-3 text-xs font-semibold text-slate-300">
@@ -272,11 +272,11 @@ export default function Portfolio() {
 
             <div className="relative mx-auto w-full max-w-[31rem] border border-white/15 bg-[#171f2b]/90 p-5 shadow-2xl shadow-black/20 sm:p-7">
               <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex items-center gap-2"><ScanLine className="h-4 w-4 text-indigo-300" /><span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-300">Edge vision pipeline</span></div>
-                <span className="font-mono text-[10px] text-emerald-300">LIVE FLOW</span>
+                <div className="flex items-center gap-2"><ScanLine className="h-4 w-4 text-slate-200" /><span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-300">Edge vision pipeline</span></div>
+                <span className="font-mono text-[10px] text-slate-300">LIVE FLOW</span>
               </div>
               <div className="relative py-5 pl-1">
-                <div className="absolute bottom-9 left-[13px] top-9 w-px bg-indigo-300/35" />
+                <div className="absolute bottom-9 left-[13px] top-9 w-px bg-slate-200/35" />
                 {[
                   ['01', '1080p RTSP stream', 'Frame ingestion'],
                   ['02', 'YOLOv8 localization', 'Vehicle + plate boxes'],
@@ -284,7 +284,7 @@ export default function Portfolio() {
                   ['04', 'EasyOCR extraction', 'Plate text output'],
                 ].map(([number, title, detail]) => (
                   <div key={number} className="relative flex gap-4 py-3">
-                    <span className="z-10 grid h-6 w-6 shrink-0 place-items-center border border-indigo-200/50 bg-[#171f2b] font-mono text-[8px] text-indigo-200">{number}</span>
+                    <span className="z-10 grid h-6 w-6 shrink-0 place-items-center border border-slate-300/50 bg-[#171f2b] font-mono text-[8px] text-slate-300">{number}</span>
                     <div className="flex min-w-0 flex-1 items-start justify-between gap-3">
                       <div><p className="text-sm font-semibold text-white">{title}</p><p className="mt-1 text-[11px] text-slate-400">{detail}</p></div>
                       <Braces className="mt-1 h-3.5 w-3.5 shrink-0 text-slate-500" />
@@ -293,8 +293,8 @@ export default function Portfolio() {
                 ))}
               </div>
               <div className="flex items-end justify-between border-t border-white/10 pt-4">
-                <div><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-400">End-to-end latency</p><p className="mt-1 text-3xl font-semibold tracking-tight text-white">84<span className="ml-1 text-base text-indigo-300">ms</span></p></div>
-                <span className="border border-emerald-300/30 bg-emerald-300/10 px-2.5 py-1.5 font-mono text-[9px] text-emerald-200">&lt; 100 ms SLA</span>
+                <div><p className="font-mono text-[9px] uppercase tracking-[0.16em] text-slate-400">End-to-end latency</p><p className="mt-1 text-3xl font-semibold tracking-tight text-white">84<span className="ml-1 text-base text-slate-200">ms</span></p></div>
+                <span className="border border-slate-300/30 bg-slate-300/10 px-2.5 py-1.5 font-mono text-[9px] text-slate-300">&lt; 100 ms SLA</span>
               </div>
             </div>
           </div>
@@ -313,7 +313,7 @@ export default function Portfolio() {
 
         <section id="work" className="mx-auto max-w-6xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-20">
           <div className="flex flex-col gap-6 border-b border-slate-300 pb-6 md:flex-row md:items-end md:justify-between">
-            <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">Selected projects / 01—10</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Work built to solve problems.</h2><p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-600">A selection across vision, systems, web applications, and applied machine learning.</p></div>
+            <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Selected projects / 01—10</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Work built to solve problems.</h2><p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-600">A selection across vision, systems, web applications, and applied machine learning.</p></div>
             <div className="flex flex-wrap gap-1.5" role="group" aria-label="Filter projects">
               {filters.map(({ id, label }) => <button key={id} type="button" aria-pressed={filter === id} onClick={() => setFilter(id)} className={`border px-3 py-2 text-[11px] font-semibold transition ${filter === id ? 'border-slate-950 bg-slate-950 text-white' : 'border-slate-300 bg-transparent text-slate-600 hover:border-slate-500 hover:text-slate-950'}`}>{label}</button>)}
             </div>
@@ -326,42 +326,42 @@ export default function Portfolio() {
 
         <section id="lab" className="scroll-mt-28 border-y border-slate-200 bg-[#e9ecf2]">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-            <div className="mb-7 grid gap-3 md:grid-cols-[1fr_auto] md:items-end"><div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">Interactive lab / 02</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Systems in practice.</h2></div><p className="max-w-sm text-sm leading-relaxed text-slate-600">Explore pipeline stages, concurrency configurations, and reported model comparisons.</p></div>
+            <div className="mb-7 grid gap-3 md:grid-cols-[1fr_auto] md:items-end"><div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Interactive lab / 02</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Systems in practice.</h2></div><p className="max-w-sm text-sm leading-relaxed text-slate-600">Explore pipeline stages, concurrency configurations, and reported model comparisons.</p></div>
             <PipelineVisualizer />
           </div>
         </section>
 
         <section id="about" className="mx-auto grid max-w-6xl gap-9 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-[0.8fr_1.2fr]">
-          <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">About / 03</p><h2 className="mt-3 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950">Engineering, with people and practice in view.</h2></div>
-          <div className="space-y-4 text-sm leading-7 text-slate-600"><p>I earned a B.S. in Computer Engineering from Istanbul Arel University. My project work covers database-backed applications, computer vision, model evaluation, and concurrent systems programming.</p><p>Earlier work in electronics sales and technical support taught me to listen carefully, explain options clearly, and solve problems with the person using the technology in mind. Student and event leadership has added experience coordinating teams and complex operations.</p><p className="border-l-2 border-indigo-500 pl-4 font-medium text-slate-800">I’m interested in practical engineering work where implementation, measurement, and clear communication all matter.</p></div>
+          <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">About / 03</p><h2 className="mt-3 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950">Engineering, with people and practice in view.</h2></div>
+          <div className="space-y-4 text-sm leading-7 text-slate-600"><p>I earned a B.S. in Computer Engineering from Istanbul Arel University. My project work covers database-backed applications, computer vision, model evaluation, and concurrent systems programming.</p><p>Earlier work in electronics sales and technical support taught me to listen carefully, explain options clearly, and solve problems with the person using the technology in mind. Student and event leadership has added experience coordinating teams and complex operations.</p><p className="border-l-2 border-slate-1000 pl-4 font-medium text-slate-800">I’m interested in practical engineering work where implementation, measurement, and clear communication all matter.</p></div>
         </section>
 
         <section id="experience" className="scroll-mt-28 bg-[#111722] text-white">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 md:grid-cols-[0.75fr_1.25fr]">
-            <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-300">Experience / 04</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">A practical foundation.</h2></div>
+            <div><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-200">Experience / 04</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em]">A practical foundation.</h2></div>
             <div className="divide-y divide-white/15 border-y border-white/15">
-              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Software Developer Intern</h3><p className="mt-1 text-sm text-slate-300">Scramble Bit</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-indigo-200">Feb — Jun 2026</span></article>
-              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Sales Associate</h3><p className="mt-1 text-sm text-slate-300">MediaMarkt · customer guidance, product support, transactions, and troubleshooting</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-indigo-200">Istanbul · Jan — Jun 2023</span></article>
-              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Freelance Digital Assistant & Technical Support</h3><p className="mt-1 text-sm text-slate-300">Hardware and software troubleshooting, digital assistance, and visual content support</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-indigo-200">Since 2022</span></article>
+              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Software Developer Intern</h3><p className="mt-1 text-sm text-slate-300">Scramble Bit</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-slate-300">Feb — Jun 2026</span></article>
+              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Sales Associate</h3><p className="mt-1 text-sm text-slate-300">MediaMarkt · customer guidance, product support, transactions, and troubleshooting</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-slate-300">Istanbul · Jan — Jun 2023</span></article>
+              <article className="grid gap-2 py-5 sm:grid-cols-[1fr_auto] sm:items-start"><div><h3 className="font-semibold">Freelance Digital Assistant & Technical Support</h3><p className="mt-1 text-sm text-slate-300">Hardware and software troubleshooting, digital assistance, and visual content support</p></div><span className="font-mono text-[10px] uppercase tracking-wider text-slate-300">Since 2022</span></article>
             </div>
           </div>
         </section>
 
         <section id="skills" className="mx-auto max-w-6xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-20">
-          <div className="mb-7"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">Technical toolkit / 05</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Tools I work with.</h2></div>
+          <div className="mb-7"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Technical toolkit / 05</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Tools I work with.</h2></div>
           <div className="grid gap-px border border-slate-200 bg-slate-200 md:grid-cols-2">
             {[
               { icon: Braces, title: 'Languages & systems', skills: 'C · C++ · Python · Java · C# · PHP · JavaScript · SQL · POSIX threads · AVX2 · Linux' },
               { icon: Eye, title: 'Vision & machine learning', skills: 'OpenCV · YOLOv8 · MediaPipe · EasyOCR · scikit-learn · Sentence-Transformers · model evaluation' },
               { icon: Database, title: 'Web & data', skills: 'ASP.NET Core MVC · Spring Boot · Laravel · FastAPI · React · SQLite · MySQL · PostgreSQL · REST APIs' },
               { icon: Cpu, title: 'Tools & implementation', skills: 'Git · Docker · GCC/G++ · Bootstrap · Tailwind CSS · Arduino IDE · data preprocessing · concurrency' },
-            ].map(({ icon: Icon, title, skills }) => <article key={title} className="bg-white p-5 sm:p-6"><Icon className="h-5 w-5 text-indigo-700" aria-hidden="true" /><h3 className="mt-4 text-sm font-bold text-slate-950">{title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{skills}</p></article>)}
+            ].map(({ icon: Icon, title, skills }) => <article key={title} className="bg-white p-5 sm:p-6"><Icon className="h-5 w-5 text-slate-700" aria-hidden="true" /><h3 className="mt-4 text-sm font-bold text-slate-950">{title}</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">{skills}</p></article>)}
           </div>
         </section>
 
         <section id="leadership" className="scroll-mt-28 border-y border-slate-200 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-            <div className="mb-8 max-w-2xl"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">Leadership & service / 06</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Coordination beyond the code.</h2><p className="mt-3 text-sm leading-relaxed text-slate-600">International events, student governance, and community programs have built a second set of practical skills: communication, planning, and follow-through.</p></div>
+            <div className="mb-8 max-w-2xl"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Leadership & service / 06</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Coordination beyond the code.</h2><p className="mt-3 text-sm leading-relaxed text-slate-600">International events, student governance, and community programs have built a second set of practical skills: communication, planning, and follow-through.</p></div>
             <div className="grid gap-3 md:grid-cols-2">
               {[
                 ['Defense Liaison', 'SAHA EXPO 2026 · Serenas Group', 'Supported protocol and liaison operations for delegations representing 74 nations.'],
@@ -370,21 +370,45 @@ export default function Portfolio() {
                 ['Chair of Central Council', 'Gudoomiyaha Golaha Dhexe', 'Contributed to Somali student programs, community coordination, and educational events.'],
                 ['Graduation Ceremony Organizer', '2025–2026', 'Helped plan and deliver annual graduation events for the Somali student community.'],
                 ['International Student Association', 'Bab-iAlem · 2022–2024', 'Supported cultural exchange activities and international student initiatives.'],
-              ].map(([title, organization, description]) => <article key={title} className="border border-slate-200 p-5 transition hover:border-indigo-300"><p className="font-mono text-[9px] uppercase tracking-[0.14em] text-indigo-700">{organization}</p><h3 className="mt-2 font-semibold text-slate-950">{title}</h3><p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p></article>)}
+              ].map(([title, organization, description]) => <article key={title} className="border border-slate-200 p-5 transition hover:border-slate-200"><p className="font-mono text-[9px] uppercase tracking-[0.14em] text-slate-700">{organization}</p><h3 className="mt-2 font-semibold text-slate-950">{title}</h3><p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p></article>)}
             </div>
           </div>
         </section>
 
         <section id="services" className="mx-auto max-w-6xl scroll-mt-28 px-5 py-16 sm:px-8 sm:py-20">
-          <div className="mb-7"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-indigo-700">Areas of support / 07</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Useful work, clearly scoped.</h2></div>
+          <div className="mb-7"><p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Areas of support / 07</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl">Useful work, clearly scoped.</h2></div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ icon: Icon, title, description }) => <article key={title} className="border border-slate-200 bg-white p-5"><Icon className="h-5 w-5 text-indigo-700" aria-hidden="true" /><h3 className="mt-4 text-sm font-bold text-slate-950">{title}</h3><p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p></article>)}
+            {services.map(({ icon: Icon, title, description }) => <article key={title} className="border border-slate-200 bg-white p-5"><Icon className="h-5 w-5 text-slate-700" aria-hidden="true" /><h3 className="mt-4 text-sm font-bold text-slate-950">{title}</h3><p className="mt-2 text-xs leading-relaxed text-slate-600">{description}</p></article>)}
           </div>
         </section>
 
-        <section id="contact" className="scroll-mt-28 bg-indigo-300">
+        <section id="cv" className="scroll-mt-28 border-y border-slate-200 bg-white">
+          <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-16">
+            <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-700">Curriculum vitae / 08</p>
+                <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-slate-950">My CV</h2>
+                <p className="mt-2 text-sm text-slate-600">View the full CV here or download a copy.</p>
+              </div>
+              <a href="/CV.pdf" download className="inline-flex w-fit items-center gap-2 bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-700">
+                <FileText className="h-4 w-4" aria-hidden="true" /> Download CV
+              </a>
+            </div>
+            <div className="overflow-hidden border border-slate-300 bg-slate-100">
+              <iframe
+                src="/CV.pdf#view=FitH"
+                title="Sharmarke Mohamed Ibrahim's curriculum vitae"
+                className="h-[65vh] min-h-[520px] w-full sm:h-[78vh]"
+                loading="lazy"
+              />
+            </div>
+            <p className="mt-3 text-xs text-slate-500">If the preview does not appear in your browser, <a href="/CV.pdf" target="_blank" rel="noreferrer" className="font-semibold text-slate-700 underline underline-offset-2">open the CV in a new tab</a>.</p>
+          </div>
+        </section>
+
+        <section id="contact" className="scroll-mt-28 bg-slate-200">
           <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:px-8 sm:py-16 md:flex-row md:items-end md:justify-between">
-            <div><p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-slate-800">Contact / 08</p><h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-5xl">Let’s talk about what you’re building.</h2><p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-800">For software opportunities, research, or a focused project, send me a note.</p></div>
+            <div><p className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-slate-800">Contact / 09</p><h2 className="mt-3 max-w-2xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-5xl">Let’s talk about what you’re building.</h2><p className="mt-4 max-w-lg text-sm leading-relaxed text-slate-800">For software opportunities, research, or a focused project, send me a note.</p></div>
             <div className="flex flex-wrap gap-3">
               <a href="mailto:sharmachannel@gmail.com" className="inline-flex shrink-0 items-center justify-between gap-8 border border-slate-950 bg-slate-950 px-5 py-4 text-sm font-bold text-white transition hover:bg-slate-800">Email me <ArrowUpRight className="h-4 w-4" /></a>
               <a href="/CV.pdf" download className="inline-flex shrink-0 items-center justify-between gap-8 border border-slate-950 px-5 py-4 text-sm font-bold text-slate-950 transition hover:bg-white">Download CV <FileText className="h-4 w-4" /></a>
@@ -394,7 +418,7 @@ export default function Portfolio() {
       </main>
 
       <footer className="bg-[#111722] text-slate-400">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-[10px] sm:flex-row sm:items-center sm:justify-between sm:px-8"><span>© 2026 Sharmarke Mohamed Ibrahim</span><span>Computer Engineer · Istanbul, Türkiye</span><a href="#home" className="font-semibold text-slate-200 transition hover:text-indigo-300">Back to top ↑</a></div>
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-6 text-[10px] sm:flex-row sm:items-center sm:justify-between sm:px-8"><span>© 2026 Sharmarke Mohamed Ibrahim</span><span>Computer Engineer · Istanbul, Türkiye</span><a href="#home" className="font-semibold text-slate-200 transition hover:text-slate-200">Back to top ↑</a></div>
       </footer>
     </div>
   );
